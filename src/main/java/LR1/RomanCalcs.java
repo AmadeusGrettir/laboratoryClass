@@ -80,4 +80,14 @@ public class RomanCalcs extends Calculations{
         }
         return result;
     }
+
+    @Override
+    public boolean isLessThenTen(String x){
+        int xInt = translateFromRoman(x);
+        if (xInt > 10){
+            return false;
+        } else {
+            return true;
+        }
+    }
 }

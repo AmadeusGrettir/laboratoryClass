@@ -32,11 +32,18 @@ public class Main {
     //Определение системы счисления
         if (NumberIdentifier.isArabicNumber(first) && NumberIdentifier.isArabicNumber(second)){
             Calculations calculator = new ArabicCalcs();
-            answer = Main.chooseOperation(operator, calculator, first, second);
-
+            if (calculator.isLessThenTen(first) && calculator.isLessThenTen(second)){
+                answer = Main.chooseOperation(operator, calculator, first, second);
+            } else {
+                answer = "Неверный формат чисел (> 10)";
+            }
         } else if (NumberIdentifier.isRomanNumber(first) && NumberIdentifier.isRomanNumber(second)) {
             Calculations calculator = new RomanCalcs();
-            answer = Main.chooseOperation(operator, calculator, first, second);
+            if (calculator.isLessThenTen(first) && calculator.isLessThenTen(second)) {
+                answer = Main.chooseOperation(operator, calculator, first, second);
+            } else {
+                answer = "Неверный формат чисел (> 10)";
+            }
         } else {
             answer = "Неверный формат чисел";
         }

@@ -32,5 +32,15 @@ public class ArabicCalcs extends Calculations{
         int bInt = Integer.valueOf(b);
         return String.valueOf(aInt / bInt);
     }
+
+    @Override
+    public boolean isLessThenTen(String x){
+        int xInt = Integer.valueOf(x);
+        if (xInt > 10){
+            return false;
+        } else {
+            return true;
+        }
+    }
 }
 

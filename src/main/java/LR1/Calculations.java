@@ -22,4 +22,9 @@ public abstract class Calculations {
         return null;
     }
 
+    public boolean isLessThenTen(String x){
+        //Проверка входного условия
+        return false;
+    }
+
 }
