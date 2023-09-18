@@ -41,7 +41,7 @@ public class RomanCalcs extends Calculations{
         return translateToRoman(div);
     }
 
-    public static int translateFromRoman(String x){
+    public int translateFromRoman(String x){
         Map<Character, Integer> map = new HashMap();
         map.put('I', 1);
         map.put('V', 5);
@@ -59,7 +59,7 @@ public class RomanCalcs extends Calculations{
         }
         return result;
     }
-    public static String translateToRoman(int x){
+    public String translateToRoman(int x){
         if (x < 1){
             return "Неположительный результат";
         }

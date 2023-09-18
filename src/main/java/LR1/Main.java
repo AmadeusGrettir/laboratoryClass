@@ -2,10 +2,9 @@ package LR1;
 import java.util.Scanner;
 public class Main {
 
-    //Считывание из консоли арифметического выражения
-    static Scanner sc = new Scanner(System.in);
-
     public static void main(String[] args) {
+    //Считывание из консоли арифметического выражения
+        Scanner sc = new Scanner(System.in);
         String line = sc.nextLine();
 
         String first = "";
@@ -33,14 +32,14 @@ public class Main {
         if (NumberIdentifier.isArabicNumber(first) && NumberIdentifier.isArabicNumber(second)){
             Calculations calculator = new ArabicCalcs();
             if (calculator.isLessThenTen(first) && calculator.isLessThenTen(second)){
-                answer = Main.chooseOperation(operator, calculator, first, second);
+                answer = calculator.chooseOperation(operator, calculator, first, second);
             } else {
                 answer = "Неверный формат чисел (> 10)";
             }
         } else if (NumberIdentifier.isRomanNumber(first) && NumberIdentifier.isRomanNumber(second)) {
             Calculations calculator = new RomanCalcs();
             if (calculator.isLessThenTen(first) && calculator.isLessThenTen(second)) {
-                answer = Main.chooseOperation(operator, calculator, first, second);
+                answer = calculator.chooseOperation(operator, calculator, first, second);
             } else {
                 answer = "Неверный формат чисел (> 10)";
             }
@@ -53,15 +52,5 @@ public class Main {
     }
 
 
-    public static String chooseOperation(char operator, Calculations calculator, String first, String second){
-        // функция для определения арифметического действия
-        String answer = null;
-        switch (operator) {
-            case '+' -> answer = calculator.addition(first, second);
-            case '-' -> answer = calculator.subtraction(first, second);
-            case '*' -> answer = calculator.multiplication(first, second);
-            case '/' -> answer = calculator.division(first, second);
-        }
-        return answer;
-    }
+
 }
