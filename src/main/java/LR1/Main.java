@@ -6,6 +6,7 @@ public class Main {
     //Считывание из консоли арифметического выражения
         Scanner sc = new Scanner(System.in);
         String line = sc.nextLine();
+        sc.close();
 
         String first = "";
         char operator = 0;

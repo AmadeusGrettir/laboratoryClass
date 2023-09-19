@@ -37,7 +37,7 @@ public class RomanCalcs extends Calculations{
         }
         int x = translateFromRoman(a);
         int y = translateFromRoman(b);
-        int div = x*y;
+        int div = x/y;
         return translateToRoman(div);
     }
 
