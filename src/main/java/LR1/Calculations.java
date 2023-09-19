@@ -2,30 +2,21 @@ package LR1;
 
 public abstract class Calculations {
 
-    public String addition(String a, String b) {
-        //метод, выполняющий сложение
-        return null;
-    }
+    //метод, выполняющий сложение
+    public abstract String addition(String a, String b);
 
-    public String subtraction(String a, String b) {
-        //метод, выполняющий вычитание
-        return null;
-    }
+    //метод, выполняющий вычитание
+    public abstract String subtraction(String a, String b);
 
-    public String multiplication(String a, String b){
-        //метод, выполняющий умножение
-        return null;
-    }
+    //метод, выполняющий умножение
+    public abstract String multiplication(String a, String b);
 
-    public String division(String a, String b){
-        //метод выполняющий деление
-        return null;
-    }
+    //метод выполняющий деление
+    public abstract String division(String a, String b);
 
-    public boolean isLessThenTen(String x){
-        //Проверка входного условия
-        return false;
-    }
+    //Проверка входного условия
+    public abstract boolean isLessThenTen(String x);
+
 
     public String chooseOperation(char operator, Calculations calculator, String first, String second){
         // функция для определения арифметического действия

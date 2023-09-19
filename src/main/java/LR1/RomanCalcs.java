@@ -32,9 +32,6 @@ public class RomanCalcs extends Calculations{
 
     @Override
     public String division(String a, String b) {
-        if (b == "0"){
-            return "Деление на ноль запрещено";
-        }
         int x = translateFromRoman(a);
         int y = translateFromRoman(b);
         int div = x/y;
