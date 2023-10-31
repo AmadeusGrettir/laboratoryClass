@@ -47,6 +47,7 @@ public class RomanCalcs extends Calculations{
         map.put('C', 100);
 
         int result = map.get(x.charAt(x.length() - 1));
+
         for(int i = x.length() - 2; i >= 0; i--) {
             if(map.get(x.charAt(i)) < map.get(x.charAt(i+1))) {
                 result -= map.get(x.charAt(i));

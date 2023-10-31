@@ -27,11 +27,14 @@ public class Main {
                 second += temp;
             }
         }
+        first = first.trim();
+        second = second.trim();
 
         String answer = null;
     //Определение системы счисления
         if (NumberIdentifier.isArabicNumber(first) && NumberIdentifier.isArabicNumber(second)){
             Calculations calculator = new ArabicCalcs();
+
             if (calculator.isLessThenTen(first) && calculator.isLessThenTen(second)){
                 answer = calculator.chooseOperation(operator, calculator, first, second);
             } else {

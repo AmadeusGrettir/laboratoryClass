@@ -2,6 +2,10 @@
 package LR1;
 
 public class ArabicCalcs extends Calculations{
+
+    public void printHello(){
+        System.out.println("Hello");
+    }
     @Override
     public String addition(String a, String b) {
         int aInt = Integer.valueOf(a);
@@ -25,7 +29,7 @@ public class ArabicCalcs extends Calculations{
 
     @Override
     public String division(String a, String b) {
-        if (b == "0"){
+        if (b.equals("0")){
             return "Деление на ноль запрещено";
         }
         int aInt = Integer.valueOf(a);
