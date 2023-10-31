@@ -4,19 +4,20 @@ import jade.core.AID;
 import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
+import lombok.extern.slf4j.Slf4j;
 
-public class InitiateDistributedCalculation extends Behaviour {
+@Slf4j
+public class InitiateDistributedCalculationBehaviour extends Behaviour {
 
     private double delta;
     private final double x;
 
-    public InitiateDistributedCalculation (double x, double delta) {
+    public InitiateDistributedCalculationBehaviour(double x, double delta) {
         this.x = x;
         this.delta = delta;
     }
 
     private final double[] points = new double[3];
-    private final String[] agents = new String[] {"Agent1","Agent2","Agent3"};
 
     @Override
     public void onStart() {
@@ -26,7 +27,7 @@ public class InitiateDistributedCalculation extends Behaviour {
         points[0] = x-delta;
         points[1] = x;
         points[2] = x+delta;
-        request.setContent((x-delta) +","+ x +","+ (x+delta));
+        request.setContent(points[0] +","+ points[1] +","+ points[2]);
 
         request.addReceiver(new AID("Agent1", false));
         request.addReceiver(new AID("Agent2", false));
@@ -42,8 +43,7 @@ public class InitiateDistributedCalculation extends Behaviour {
 
         ACLMessage receive = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.CONFIRM));
         if (receive != null){
-            System.out.println("received from " + receive.getSender().getLocalName());
-
+            log.debug("Answer received from: {} ", receive.getSender().getLocalName());
             String[] res = receive.getContent().split(",");
             for (int i = 0; i < results.length; i++) {
                 results[i] += Double.parseDouble(res[i]);
@@ -71,11 +71,11 @@ public class InitiateDistributedCalculation extends Behaviour {
             }
         }
 
-        double DELTA = 0.001;
-        if (delta <= DELTA){
-            System.out.printf("That's all, min = (%5.3f, %5.3f)", minX, minY);
+        double demandDelta = 0.001;
+        if (delta <= demandDelta){
+            String resultInfo = String.format("That's all, min = (%5.3f, %5.3f)", minX, minY);
+            log.info(resultInfo);
         } else {
-
             ACLMessage initiative = new ACLMessage(ACLMessage.INFORM);
             if (minX == x){
                 delta /= 2;
@@ -85,7 +85,7 @@ public class InitiateDistributedCalculation extends Behaviour {
                 if(agentNum == 4){
                     agentNum = 1;
                 }
-                String newAgent = myAgent.getLocalName().substring(0,myAgent.getLocalName().length() - 1) + agentNum;
+                String newAgent = "Agent" + agentNum;
                 initiative.addReceiver(new AID(newAgent, false));
             }
             initiative.setContent(minX+","+delta);
