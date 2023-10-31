@@ -8,7 +8,6 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 public class InitiateDistributedCalculationBehaviour extends Behaviour {
-
     private double delta;
     private final double x;
 
@@ -21,7 +20,6 @@ public class InitiateDistributedCalculationBehaviour extends Behaviour {
 
     @Override
     public void onStart() {
-
         ACLMessage request = new ACLMessage(ACLMessage.REQUEST);
 
         points[0] = x-delta;
@@ -40,7 +38,6 @@ public class InitiateDistributedCalculationBehaviour extends Behaviour {
 
     @Override
     public void action() {
-
         ACLMessage receive = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.CONFIRM));
         if (receive != null){
             log.debug("Answer received from: {} ", receive.getSender().getLocalName());

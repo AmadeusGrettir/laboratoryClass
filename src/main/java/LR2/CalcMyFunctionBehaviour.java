@@ -1,7 +1,7 @@
 package LR2;
 
-import LR2.functions.Function1;
 import LR2.functions.Function;
+import LR2.functions.Function1;
 import LR2.functions.Function2;
 import LR2.functions.Function3;
 import jade.core.AID;
@@ -13,8 +13,8 @@ import java.util.HashMap;
 
 @Slf4j
 public class CalcMyFunctionBehaviour extends Behaviour {
-
     private final double[] arrayY = new double[3];
+
     @Override
     public void action() {
         HashMap<String, Function> functions = new HashMap<>();
