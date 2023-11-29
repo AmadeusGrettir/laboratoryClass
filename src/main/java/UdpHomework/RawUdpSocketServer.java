@@ -34,7 +34,7 @@ public class RawUdpSocketServer {
                 break;
             }
         }
-        //TODO: handle if interface was not found
+
         PcapHandle pcapHandle = networkInterface.openLive(65536, PcapNetworkInterface.PromiscuousMode.PROMISCUOUS, 50);
         pcapHandle.setFilter("ip proto \\udp && dst port "+port, BpfProgram.BpfCompileMode.NONOPTIMIZE);
 
