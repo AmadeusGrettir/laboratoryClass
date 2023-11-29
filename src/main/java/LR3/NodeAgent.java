@@ -1,8 +1,8 @@
 package LR3;
 
-import LR3.InitiatorFSM.SendRequestBehaviour;
-import LR3.InitiatorFSM.WaitForAnswerParallelBehaviour;
-import LR3.NodeFSM.WaitRequestParallelBehaviour;
+import LR3.InitiatorBehaviours.SendRequestBehaviour;
+import LR3.InitiatorBehaviours.WaitForAnswerParallelBehaviour;
+import LR3.NodeBehaviours.WaitRequestParallelBehaviour;
 import jade.core.Agent;
 import lombok.extern.slf4j.Slf4j;
 
@@ -17,10 +17,10 @@ public class NodeAgent extends Agent {
 
         int nodePos = Integer.parseInt(this.getLocalName().substring(4));
 
-        String first = XmlHelper.addFirst();
-        String last = XmlHelper.addLast();
-        List<String> neighbours = XmlHelper.addNeighbours(nodePos);
-        List<String> weightings = XmlHelper.addWeightings(nodePos);
+        String first = ParametersHelper.addFirst();
+        String last = ParametersHelper.addLast();
+        List<String> neighbours = ParametersHelper.addNeighbours(nodePos);
+        List<String> weightings = ParametersHelper.addWeightings(nodePos);
         List<String> currentTraceList = new ArrayList<>();
         currentTraceList.add(first);
 

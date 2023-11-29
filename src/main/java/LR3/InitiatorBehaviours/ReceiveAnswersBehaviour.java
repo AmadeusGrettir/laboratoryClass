@@ -1,6 +1,6 @@
-package LR3.InitiatorFSM;
+package LR3.InitiatorBehaviours;
 
-import LR3.NodeFSM.SendAnswerBehaviour;
+import LR3.NodeBehaviours.SendAnswerBehaviour;
 import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;

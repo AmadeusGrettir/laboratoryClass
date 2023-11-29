@@ -1,4 +1,4 @@
-package LR3.InitiatorFSM;
+package LR3.InitiatorBehaviours;
 
 import jade.core.behaviours.OneShotBehaviour;
 import lombok.extern.slf4j.Slf4j;

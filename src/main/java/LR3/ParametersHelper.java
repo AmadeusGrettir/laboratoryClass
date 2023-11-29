@@ -8,10 +8,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-public class XmlHelper {
+public class ParametersHelper {
     private static Optional<NodeConfig> parsedCfg = XmlUtils.parse("src/main/resources/config14.xml", NodeConfig.class);
 
-    public static double getWeighting(int senderPos, int nodePos){
+    public static double getWeight(int senderPos, int nodePos){
         List<String> we = new ArrayList<>();
         parsedCfg.ifPresent(cfg ->
                 we.addAll(cfg

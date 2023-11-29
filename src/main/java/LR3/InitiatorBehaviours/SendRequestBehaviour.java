@@ -1,6 +1,6 @@
-package LR3.InitiatorFSM;
+package LR3.InitiatorBehaviours;
 
-import LR3.XmlHelper;
+import LR3.ParametersHelper;
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;
 import jade.lang.acl.ACLMessage;
@@ -28,7 +28,7 @@ public class SendRequestBehaviour extends OneShotBehaviour {
         msg.setProtocol("FindBridges");
 
         int nodePos = Integer.parseInt(myAgent.getLocalName().substring(4));
-        List<String> neighbours = XmlHelper.addNeighbours(nodePos);
+        List<String> neighbours = ParametersHelper.addNeighbours(nodePos);
 
         Iterator<String> neighboursIterator = neighbours.iterator();
         while(neighboursIterator.hasNext()) {

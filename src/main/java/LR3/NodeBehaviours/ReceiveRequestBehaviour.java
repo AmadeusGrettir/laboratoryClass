@@ -1,11 +1,11 @@
-package LR3.NodeFSM;
+package LR3.NodeBehaviours;
 
 import jade.core.behaviours.Behaviour;
 import jade.lang.acl.ACLMessage;
 import jade.lang.acl.MessageTemplate;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
-import LR3.XmlHelper;
+import LR3.ParametersHelper;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -26,6 +26,7 @@ public class ReceiveRequestBehaviour extends Behaviour{
     @Override
     public void action() {
         ACLMessage request = myAgent.receive(MessageTemplate.MatchPerformative(ACLMessage.REQUEST));
+
         if (request != null) {
             recieved = true;
             String msg = request.getContent();
@@ -40,7 +41,7 @@ public class ReceiveRequestBehaviour extends Behaviour{
             String sender = request.getSender().getLocalName();
             int nodePos = Integer.parseInt(myAgent.getLocalName().substring(4));
             int senderPos = Integer.parseInt(sender.substring(4));
-            weight += XmlHelper.getWeighting(senderPos,nodePos);
+            weight += ParametersHelper.getWeight(senderPos,nodePos);
 
             List<String> currentTraceList = new ArrayList<>(Arrays.asList(trace.split(",")));
             currentTraceList.remove(currentTraceList.size() - 1);

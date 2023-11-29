@@ -1,4 +1,4 @@
-package LR3.NodeFSM;
+package LR3.NodeBehaviours;
 
 import jade.core.AID;
 import jade.core.behaviours.OneShotBehaviour;

@@ -1,6 +1,6 @@
-package LR3.NodeFSM;
+package LR3.NodeBehaviours;
 
-import LR3.InitiatorFSM.SendRequestBehaviour;
+import LR3.InitiatorBehaviours.SendRequestBehaviour;
 import jade.core.behaviours.Behaviour;
 import jade.core.behaviours.ParallelBehaviour;
 import jade.core.behaviours.WakerBehaviour;
