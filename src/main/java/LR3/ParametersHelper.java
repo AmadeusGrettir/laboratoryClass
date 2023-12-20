@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class ParametersHelper {
-    private static Optional<NodeConfig> parsedCfg = XmlUtils.parse("src/main/resources/config14.xml", NodeConfig.class);
+    private static Optional<NodeConfig> parsedCfg = XmlUtils.parse("src/main/resources/LR3resources/config14.xml", NodeConfig.class);
 
     public static double getWeight(int senderPos, int nodePos){
         List<String> we = new ArrayList<>();

@@ -3,8 +3,10 @@ package UdpHomework;
 import jade.core.AID;
 import lombok.SneakyThrows;
 
+import java.io.ByteArrayOutputStream;
 import java.net.InetAddress;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
 
 public class PacketCreator {
 
@@ -20,8 +22,6 @@ public class PacketCreator {
         for (int i = 0, j = 7; i < 1; i++, j++) {
             packet[i] = longToBytes(0x02)[j];
         }
-
-        // безполезная первая часть
 
 
         //Header Length = 20 bytes
@@ -60,6 +60,8 @@ public class PacketCreator {
         for (int i = 30, j = 6; i < 32; i++, j++) packet[i] = longToBytes(0x0000)[j];
         //Data
         System.arraycopy(data, 0, packet, 32, data.length);
+
+        System.out.println(Arrays.toString(packet));
         return packet;
     }
 

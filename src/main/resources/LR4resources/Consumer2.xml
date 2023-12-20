@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<loadConfig name="MPEI">
+    <distributor>Distributer2</distributor>
+    <maxPower>17.6</maxPower>
+    <loads>
+        <load hour="0">0.2</load>
+        <load hour="1">0.2</load>
+        <load hour="2">0.2</load>
+        <load hour="3">0.2</load>
+        <load hour="4">0.2</load>
+        <load hour="5">0.2</load>
+        <load hour="6">0.2</load>
+        <load hour="7">0.2</load>
+        <load hour="8">0.4</load>
+        <load hour="9">0.6</load>
+        <load hour="10">1</load>
+        <load hour="11">1</load>
+        <load hour="12">1</load>
+        <load hour="13">0.75</load>
+        <load hour="14">0.55</load>
+        <load hour="15">0.55</load>
+        <load hour="16">0.3</load>
+        <load hour="17">0.3</load>
+        <load hour="18">0.3</load>
+        <load hour="19">0.3</load>
+        <load hour="20">0.2</load>
+        <load hour="21">0.2</load>
+        <load hour="22">0.2</load>
+        <load hour="23">0.2</load>
+    </loads>
+</loadConfig>
